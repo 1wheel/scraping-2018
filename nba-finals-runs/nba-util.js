@@ -88,4 +88,11 @@ var teams = [
   { 'Team name': 'Washington Wizards', TeamID: '1610612764' }
 ]
 
-module.exports = {headers, parseResultSet, teams, prevTeams, scraper}
+function gameID2year(id){
+  var year = +id.slice(3, 5)
+  year = year < 40 ? 2000 + year : 1900 + year
+  return year
+}
+
+
+module.exports = {headers, parseResultSet, teams, prevTeams, scraper, gameID2year}
