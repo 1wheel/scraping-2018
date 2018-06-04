@@ -51,3 +51,6 @@ glob
 statlines = _.sortBy(statlines, d => d.year)
 
 io.writeDataSync(__dirname + `/statlines${isAll ? '-all' : ''}.tsv`, statlines)
+io.writeDataSync(__dirname + `/../../2018-06-04-lebron-everything/public/_assets/${isAll ? '-all' : ''}.tsv`, statlines)
+
+
