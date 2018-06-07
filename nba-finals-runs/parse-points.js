@@ -32,7 +32,6 @@ glob
     parseResultSet(box.resultSets[0]).forEach(d => {
       if (!isAll && !isFinals[d.TEAM_ID + '' + year]) return
 
-      if (box.parameters.GameID == '0041700403') console.log(year, 'count this')
       // console.log(d)
       var name = d.PLAYER_NAME
       var pts = d.PTS || 0
