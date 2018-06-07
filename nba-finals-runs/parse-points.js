@@ -28,20 +28,22 @@ glob
     var year = 1 + +box.parameters.GameID.slice(3, 5)
     year = year < 20 ? 2000 + year : 1900 + year
 
+
     parseResultSet(box.resultSets[0]).forEach(d => {
       if (!isAll && !isFinals[d.TEAM_ID + '' + year]) return
 
+      if (box.parameters.GameID == '0041700403') console.log(year, 'count this')
       // console.log(d)
       var name = d.PLAYER_NAME
       var pts = d.PTS || 0
-      var REB = d.REB || 0
-      var AST = d.AST || 0
-      var BLK = d.BLK || 0
-      var STL = d.STL || 0 
-      var total = pts + REB + AST + BLK + STL
+      var reb = d.REB || 0
+      var ast = d.AST || 0
+      var blk = d.BLK || 0
+      var stl = d.STL || 0 
+      var total = pts + reb + ast + blk + stl
       var team = d.TEAM_ABBREVIATION
       var game = d.GAME_ID
-      statlines.push({year, team, name, pts, total, game})      
+      statlines.push({year, team, name, pts, total, game, reb, ast, blk, stl})      
     })
     
     
@@ -49,8 +51,9 @@ glob
 
 
 statlines = _.sortBy(statlines, d => d.year)
+  .filter(d => d.year >= 1974)
 
 io.writeDataSync(__dirname + `/statlines${isAll ? '-all' : ''}.tsv`, statlines)
-io.writeDataSync(__dirname + `/../../2018-06-04-lebron-everything/public/_assets/${isAll ? '-all' : ''}.tsv`, statlines)
+io.writeDataSync(__dirname + `/../../2018-06-04-lebron-everything/public/_assets/statlines${isAll ? '-all' : ''}.tsv`, statlines)
 
 
