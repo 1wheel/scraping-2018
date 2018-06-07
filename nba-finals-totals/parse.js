@@ -2,9 +2,6 @@ var { _, d3, jp, fs, glob, io, queue, request } = require('scrape-stl')
 
 var teamyear = glob
   .sync(__dirname + '/raw/*')
-  .filter(d => !d.includes('WAS'))
-  .filter(d => !d.includes('PHX'))
-  // .map(io.readDataSync)
   // .slice(0, 1)
   .map(path => {
 
