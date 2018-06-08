@@ -50,7 +50,7 @@ glob
 
 
 statlines = _.sortBy(statlines, d => d.year)
-  .filter(d => d.year >= 1974)
+  .filter(d => d.year == 2018)
 
 io.writeDataSync(__dirname + `/statlines${isAll ? '-all' : ''}.tsv`, statlines)
 io.writeDataSync(__dirname + `/../../2018-06-04-lebron-everything/public/_assets/statlines${isAll ? '-all' : ''}.tsv`, statlines)

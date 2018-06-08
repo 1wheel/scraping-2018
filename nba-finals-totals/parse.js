@@ -35,6 +35,8 @@ var teamyear = glob
           } else{
             val = +val
           }
+          if (key == 'trb') key = 'reb'
+
           rv[key] = val
         })    
 
@@ -50,5 +52,41 @@ teamyear = _.sortBy(teamyear, d => d.year)
 
 io.writeDataSync(__dirname + `/../../2018-06-04-lebron-everything/public/_assets/teamyear.json`, teamyear)
 io.writeDataSync(__dirname + `/teamyear.json`, teamyear)
+
+
+var teamtop = teamyear.map(team => {
+  var rv = {team: team.team, year: team.year, total: {total: 0}, most: {}}
+
+  var cats = 'pts reb ast stl blk'.split(' ')
+
+  team.players.forEach(d => d.total = 0)
+
+  cats.forEach(key => {
+    rv.total[key] = d3.sum(team.players, d => d[key])
+
+    rv.total.total += rv.total[key]
+
+    team.players.forEach(d => {
+      d.total += d[key]
+    })
+  })
+
+  rv.top = _.sortBy(team.players, d => d.total).reverse()[0]
+
+  rv.topName = rv.top.name
+  rv.topPercent = rv.top.total/rv.total.total
+  // console.log(rv)
+
+  cats.forEach(key => {
+    rv.most[key] = team.players.filter(d => d[key]).every(d => d[key] <= rv.top[key])
+  })
+
+  return rv
+})
+
+
+
+io.writeDataSync(__dirname + `/../../2018-06-04-lebron-everything/public/_assets/teamtop.json`, teamtop)
+io.writeDataSync(__dirname + `/teamtop.json`, teamtop)
 
 
