@@ -4,7 +4,7 @@ var { scraper, teams } = require('./nba-util.js')
 var slugs = []
 
 teams.forEach(({teamID}) => {
-  d3.range(1946, 2018).forEach(year => {
+  d3.range(1946, 2019).forEach(year => {
     var season = year + '-' + ((year + 1) % 100)
     slugs.push(season + '_' + teamID)
   })

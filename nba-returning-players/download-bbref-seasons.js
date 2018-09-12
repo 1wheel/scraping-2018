@@ -6,7 +6,7 @@ var teams = 'ATL BOS NJN CHA CHI CLE DAL DEN DET GSW HOU IND LAC LAL MEM MIA MIL
 
 var url = 'https://www.basketball-reference.com/leagues/NBA_1950.html'
 
-slugs = d3.range(1950, 2018)
+slugs = d3.range(1950, 2020)
 
 scraper({
   slugs,
