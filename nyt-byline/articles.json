@@ -1,5 +1,53 @@
 [
   {
+    "slug": "republicans-dominate-state-politics-but-democrats-made-a-dent",
+    "date": "2018-11",
+    "url": "https://www.nytimes.com/interactive/2018/11/10/upshot/republicans-dominate-state-politics-but-democrats-made-a-dent.html",
+    "img": "https://static01.nyt.com/images/2018/11/09/us/up-state-houses-promo-1541803667826/up-state-houses-promo-1541803667826-master1050-v2.jpg"
+  },
+  {
+    "slug": "2018-possible-midterm-recounts-georgia-florida-arizona",
+    "date": "2018-11",
+    "url": "https://www.nytimes.com/interactive/2018/11/10/us/elections/2018-possible-midterm-recounts-georgia-florida-arizona.html",
+    "img": "https://static01.nyt.com/images/2018/11/09/us/2018-possible-midterm-recounts-georgia-florida-arizona-promo-1541820719668/2018-possible-midterm-recounts-georgia-florida-arizona-promo-1541820719668-master1050-v2.png"
+  },
+  {
+    "slug": "tracking-hurricane-michael-path",
+    "date": "2018-10",
+    "url": "https://www.nytimes.com/interactive/2018/10/08/us/tracking-hurricane-michael-path.html",
+    "img": "https://static01.nyt.com/images/2018/10/08/us/tracking-hurricane-michael-path-promo-1539020902270/tracking-hurricane-michael-path-promo-1539020902270-master1050-v98.png"
+  },
+  {
+    "slug": "hurricane-florence-flooding",
+    "date": "2018-09",
+    "url": "https://www.nytimes.com/interactive/2018/09/18/us/hurricane-florence-flooding.html",
+    "img": "https://static01.nyt.com/images/2018/09/18/us/hurricane-florence-promo-1537304616488/hurricane-florence-promo-1537304616488-master1050.jpg"
+  },
+  {
+    "slug": "hurricane-florence-impact-damage-map",
+    "date": "2018-09",
+    "url": "https://www.nytimes.com/interactive/2018/09/13/us/hurricane-florence-impact-damage-map.html",
+    "img": "https://static01.nyt.com/images/2018/09/11/us/hurricane-florence-tracking-map-promo-1536673849664/hurricane-florence-tracking-map-promo-1536673849664-master1050-v7.png"
+  },
+  {
+    "slug": "representatives-running-unopposed-uncontested-primaries",
+    "date": "2018-06",
+    "url": "https://www.nytimes.com/interactive/2018/06/30/us/elections/representatives-running-unopposed-uncontested-primaries.html",
+    "img": "https://static01.nyt.com/images/2018/09/04/us/representatives-running-unopposed-uncontested-primaries-promo-1536116329367/representatives-running-unopposed-uncontested-primaries-promo-1536116329367-master1050.jpg"
+  },
+  {
+    "slug": "midterm-primaries-voter-turnout",
+    "date": "2018-06",
+    "url": "https://www.nytimes.com/interactive/2018/06/25/us/politics/midterm-primaries-voter-turnout.html",
+    "img": "https://static01.nyt.com/images/2018/06/25/us/midterm-primaries-voter-turnout-promo-1529957148807/midterm-primaries-voter-turnout-promo-1529957148807-master1050.png"
+  },
+  {
+    "slug": "lebron-nba-finals",
+    "date": "2018-06",
+    "url": "https://www.nytimes.com/interactive/2018/06/08/sports/basketball/lebron-nba-finals.html",
+    "img": "https://static01.nyt.com/images/2018/06/08/sports/lebron-promo/lebron-promo-master1050.jpg"
+  },
+  {
     "slug": "subway-crisis-mta-decisions-signals-rules",
     "date": "2018-05",
     "url": "https://www.nytimes.com/interactive/2018/05/09/nyregion/subway-crisis-mta-decisions-signals-rules.html",
