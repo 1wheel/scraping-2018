@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "d3-node": "^2.2.0",
     "scrape-stl": "^1.0.3"
   }
 }
