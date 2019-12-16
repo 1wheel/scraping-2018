@@ -23,6 +23,13 @@ function parseHTML(html){
     rv.slug = $('span a', this).text()
     rv.artist = rv.slug.split(' - ')[0]
     rv.album = rv.slug.split(' - ')[1]
+    try {
+      rv.spotify = $(this).html().split('open.spotify.com/album/')[1].split('"')[0]
+    } catch (e){
+      rv.spotify = ''
+      console.log(rv.album)
+    }
+
 
     array.push(rv)
   })
