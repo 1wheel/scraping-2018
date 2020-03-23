@@ -1,4 +1,7 @@
 // web.mta.info/developers/turnstile.html
+// http://web.mta.info/developers/resources/nyct/turnstile/ts_Field_Description.txt
+// https://www.reddit.com/r/dataisbeautiful/comments/fmgrl0/new_york_city_subway_usage_was_down_75_last_week/
+// https://github.com/toddwschneider/nyc-subway-turnstile-data
 
 var { _, d3, jp, fs, glob, io, queue, request } = require('scrape-stl')
 
