@@ -5,6 +5,7 @@ var rawdir = __dirname + `/raw-data`
 var url = 'https://projects.fivethirtyeight.com/2020-nba-predictions/data.json'
 request({url}, (err, res, body) => {
   var dateStr = (new Date()).toISOString()
+  console.log('new download', dateStr)
   fs.writeFileSync(`${rawdir}/${dateStr}.json`, body)
 
   merge()
