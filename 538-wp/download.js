@@ -13,12 +13,13 @@ request({url}, (err, res, body) => {
 
 
 function merge(){
-  // var lastUpdate = null
+  var games
+
   var out = glob.sync(rawdir + '/*.json')
-    .map((path, i) => {
+    .map((path, i, array) => {
       var data = io.readDataSync(path)
 
-      // if (!lastUpdate || data.weekly_forecasts.forecasts[0].last_updated > lastUpdate.weekly_forecasts.forecasts[0].last_updated) lastUpdate = data
+      if (i == array.length - 1) games = data.games
 
       var rv = data.weekly_forecasts.forecasts[0]
       rv.timestamp = path.split('/').slice(-1)[0].replace('.json', '')
@@ -29,7 +30,8 @@ function merge(){
 
   // TODO just grab the last update from a given day
 
-  io.writeDataSync(__dirname + '/merged-forecasts.json', out)
+  io.writeDataSync(__dirname + '/538-2020-nba-forecasts.json', out)
+  io.writeDataSync(__dirname + '/538-2020-nba-games.json', games)
 
 }
 
