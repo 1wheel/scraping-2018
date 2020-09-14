@@ -28,7 +28,7 @@ function merge(){
     })
 
   allForecasts = _.sortBy(allForecasts, d => d.last_updated)
-  var forecasts = d3.nestBy(forecasts, d => d.last_updated).map(_.last)
+  var forecasts = jp.nestBy(forecasts, d => d.last_updated).map(_.last)
 
   // TODO just grab the last update from a given day
   io.writeDataSync(__dirname + '/538-2020-nba-forecasts.json', forecasts)
