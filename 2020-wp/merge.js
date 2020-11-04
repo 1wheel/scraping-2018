@@ -31,6 +31,9 @@ function merge(){
         }
 
         var {last_update, state, error} = d
+
+        if (last_update > '2020-11-04 09:01:45') return
+
         tidy.push({last_update, state, error, rProb})
       })
     })
