@@ -15,4 +15,4 @@ function download(){
 }
 
 download()
-setInterval(download, 30*1000)
+setInterval(download, 60*1000)
