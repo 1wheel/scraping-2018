@@ -12,7 +12,7 @@ function merge(){
 
   glob.sync(rawdir + '/fox/*.json')
     .forEach((path, i, array) => {
-      // console.log(path)
+      console.log(path)
       try {
         io.readDataSync(path)
       } catch (e){
@@ -50,7 +50,7 @@ function merge(){
   exec(`rsync -a ${outpath} public/ demo@roadtolarissa.com:../../usr/share/nginx/html/data/fox-2020-wp.csv`)
 }
 
-setInterval(merge, 60*1000)
+// setInterval(merge, 60*1000)
 merge()
 
 
