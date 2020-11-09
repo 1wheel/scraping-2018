@@ -11,8 +11,14 @@ function merge(){
   var tidy = []
 
   glob.sync(rawdir + '/fox/*.json')
-    .map((path, i, array) => {
+    .forEach((path, i, array) => {
       // console.log(path)
+      try {
+        io.readDataSync(path)
+      } catch (e){
+        return 
+      }
+
       io.readDataSync(path).forEach(d => {
         if (!d.race_id.includes('-P-')) return
 
