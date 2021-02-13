@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "d3-node": "^2.2.0",
+    "get-pixels": "^3.3.2",
     "scrape-stl": "^1.0.3"
   }
 }
