@@ -13,6 +13,9 @@ var countries = str.split('<h2><span class="mw-headline" id="').slice(1)
 countries.forEach(countryStr => {
   var country = countryStr.split('"')[0]
 
+  if (!country) return
+  country = country.replace(/_/g, ' ')
+
   countryStr.split('flagicon').slice(1).forEach(regionStr => {
     var [__, iconLink, flaglink, nameLink] = regionStr.split('a href="')
 
@@ -32,7 +35,7 @@ countries.forEach(countryStr => {
   })
 })
 
-io.writeDataSync(__dirname + '/regions.csv', tidy)
+// io.writeDataSync(__dirname + '/regions.csv', tidy)
 
 
 
@@ -53,6 +56,7 @@ function dlImages(){
 
 
 function calcColors(){
+  // colors are distributed mostly evenly
   // var colors = d3.range(256).map(i => Math.round(i/51))
   // console.log(colors.join(' '))
 
@@ -61,10 +65,23 @@ function calcColors(){
     var rgb = `rgb(${r*51}, ${g*51}, ${b*51})`
     var hsl = d3.hsl(rgb)
 
-    return {r, g, b, rgb, hsl}
+    var {h, l} = hsl
+    if (h >= 345) h = 0
+    if (h == null) h = -1000
+    if (isNaN(h)) h = 1000
+
+    return {r, g, b, rgb, h, l, hsl}
   })
 
-  colors = _.sortBy(colors, d => d.hsl.h)
+
+
+  colors = _.sortBy(colors, d => d.l)
+  colors = _.sortBy(colors, d => d.h)
+  // colors = _.sortBy(colors, d => d.hsl.l < .1 ? -1 : d.hsl.l > .95 ? 1 : 0)
+  io.writeDataSync(__dirname + '/colors.json', colors)
+  io.writeDataSync(__dirname + '/../../1wheel/region-flags/colors.json', colors)
+
+
   var id2index = {}
   colors.forEach(({r, g, b}, i) => id2index[r + '' + g + '' + b] = i)
 
@@ -77,9 +94,9 @@ function calcColors(){
 
       var numPixels = data.length/4
       d3.range(numPixels).forEach(i => {
-        var r = data[i*4 + 0]
-        var g = data[i*4 + 0]
-        var b = data[i*4 + 0]
+        var r = Math.round(data[i*4 + 0]/51)
+        var g = Math.round(data[i*4 + 1]/51)
+        var b = Math.round(data[i*4 + 2]/51)
 
         var index = id2index[r + '' + g + '' + b]
 
@@ -87,10 +104,12 @@ function calcColors(){
       })
 
       flags[flagIndex] = colorArray
+      d.colors = colorArray
 
       // lolll
-      if (flags.every(d => d)){
-        io.writeDataSync(__dirname + '/flag-colors.json', {colors, flags})
+      if (tidy.every(d => d.colors)){
+        io.writeDataSync(__dirname + '/regions.json', tidy)
+        io.writeDataSync(__dirname + '/../../1wheel/region-flags/regions.json', tidy)
       }
     })
   })
