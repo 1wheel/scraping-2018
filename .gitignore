@@ -39,3 +39,6 @@ flags/raw-img/
 
 
 finals-2021/nba/raw
+nyt-theater/nyt/headers.json
+
+node_modules
