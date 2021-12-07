@@ -4,15 +4,17 @@ import {_, cheerio, d3, jp, fs, glob, io, queue, request} from 'scrape-stl'
 import fetch from 'node-fetch'
 
 import { URL } from 'url'
-var __dirname = new URL('.', import.meta.url).pathname
+var __dirname = new URL('.', import.meta.url).pathname.slice(0, -1)
 
 var headers = io.readDataSync(__dirname + 'headers.json')
 
 var res = await fetch("https://samizdat-graphql.nytimes.com/graphql/v2", {
   headers,
-  "body": "{\"operationName\":\"TheaterReviewsQuery\",\"variables\":{\"first\":10,\"sortOrder\":\"ASC\",\"cursor\":\"YXJyYXljb25uZWN0aW9uOjk=\"},\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"d758b4b1501b909d523c32435bbbcd265221e3cc9d945ae787c060d3086da2ea\"}}}",
+  body: "{\"operationName\":\"TheaterReviewsQuery\",\"variables\":{\"first\":10,\"sortOrder\":\"ASC\",\"cursor\":\"YXJyYXljb25uZWN0aW9uOjk=\"},\"extensions\":{\"persistedQuery\":{\"version\":1,\"sha256Hash\":\"d758b4b1501b909d523c32435bbbcd265221e3cc9d945ae787c060d3086da2ea\"}}}",
   "method": "POST"
 })
+
+
 
 var json = await res.json()
 
