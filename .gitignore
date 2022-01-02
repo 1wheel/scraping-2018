@@ -46,3 +46,6 @@ nyt-theater/iobdb/raw/
 nyt-theater/nyt/raw/
 
 node_modules
+
+
+box-office-mojo/raw
