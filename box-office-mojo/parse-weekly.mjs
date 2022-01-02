@@ -50,7 +50,7 @@ glob
         }
       })
 
-      tidy.push(rv)
+      if (rv.id) tidy.push(rv)
     })
 
 
