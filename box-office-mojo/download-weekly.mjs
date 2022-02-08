@@ -6,7 +6,7 @@ import fetch from 'node-fetch'
 import { URL } from 'url'
 var __dirname = new URL('.', import.meta.url).pathname.slice(0, -1)
 
-var years = d3.range(1977, 2022)
+var years = d3.range(1977, 2023)
 var weeks = d3.range(1, 54).map(d => d3.format('02')(d))
 
 var slugs = d3.cross(years, weeks)
@@ -17,7 +17,7 @@ scraper({
   slugToUrl: d => 'https://www.boxofficemojo.com/weekly/' + d + '/',
   slugToPath: d => __dirname + '/raw/weekly-html/' + d + '.html',
   outregex: __dirname + '/raw/weekly-html/*.html',
-  concurancy: 1,
+  concurancy: 10,
 })
 
 function scraper({slugs, slugToPath, slugToUrl, concurancy = 1, outregex}, cb){
