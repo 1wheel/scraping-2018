@@ -17,7 +17,7 @@ scraper({
   slugToUrl: d => 'https://www.boxofficemojo.com/weekend/' + d + '/',
   slugToPath: d => __dirname + '/raw/weekend-html/' + d + '.html',
   outregex: __dirname + '/raw/weekend-html/*.html',
-  concurancy: 10,
+  concurancy: 1,
 })
 
 function scraper({slugs, slugToPath, slugToUrl, concurancy = 1, outregex}, cb){
