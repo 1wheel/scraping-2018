@@ -62,7 +62,7 @@ function parse(periodStr){
     })
 
 
-  io.writeDataSync(__dirname + `/tidy-${periodStr}.csv`, tidy)
+  io.writeDataSync(__dirname + `/box-office-mojo-${periodStr}.csv`, tidy)
 
 }
 
