@@ -16,8 +16,8 @@ function parse(periodStr){
 
       var slug = _.last(path.split('.html')[0].split('/'))
       // if (slug != '2000W18') return
-      var [year, week] = slug.split('W')
-
+      var [year, week] = slug.split('-')[0].split('W')
+      var isOccasion = slug.includes('-')
 
       var html = fs.readFileSync(path, 'utf8')
 
@@ -37,7 +37,7 @@ function parse(periodStr){
       })
 
       rows.forEach((row, rowIndex) => {
-        var rv = {year, week}
+        var rv = {year, week, isOccasion}
         // if (rowIndex) return
         // console.log(rowIndex)
         row.split('<td ').forEach((d, i) => {
@@ -57,9 +57,21 @@ function parse(periodStr){
 
         if (rv.id) tidy.push(rv)
       })
-
-
     })
+
+
+  jp.nestBy(tidy, d => d.year + 'W' + d.week).forEach(week => {
+    var occasionCount = d3.sum(week, d => d.isOccasion)
+
+    if (occasionCount < week.length/2){
+      week.filter(d => d.isOccasion).forEach(d => d.remove = true)
+    } else {
+      week.filter(d => !d.isOccasion).forEach(d => d.remove = true)
+    }
+  })
+
+  tidy = tidy.filter(d => !d.remove)
+  tidy.forEach(d => delete d.isOccasion)
 
 
   io.writeDataSync(__dirname + `/box-office-mojo-${periodStr}.csv`, tidy)
