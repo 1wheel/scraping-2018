@@ -1,3 +1,6 @@
+// https://www.nytimes.com/interactive/2022/11/08/us/elections/results-needle-forecast.html
+
+
 var { _, d3, jp, fs, glob, io, queue, request } = require('scrape-stl')
 
 var rawdir = __dirname + `/raw-data/nyt`
