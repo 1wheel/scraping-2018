@@ -15,15 +15,35 @@ function merge(){
     })
 
   var byTime = jp.nestBy(files, d => d.time)
-  var lastTime = _.last(byTime)
+  var time = _.last(byTime)
 
-  console.log(lastTime)
+  var nyt = _.findWhere(time, {slug: 'nyt'})
+  var nytData = io.readDataSync(nyt.path)
 
+  var races = nytData.raceCollections.scoreboard_races.map(d => d.nyt_voteshare_estimate)
+  races.forEach(d => {
+    var [state, __, chamber] = d.nyt_id.split('-')
+    d.state = state
+    d.chamber = chamber
+  })
 
+  time.forEach(({slug, path}) => {
+    if (slug == 'nyt') return
 
-  return
-  io.writeDataSync(outdir + '2022-wp.csv', tidy)
-  // exec(`rsync -a ${outpath} public/ demo@roadtolarissa.com:../../usr/share/nginx/html/data/2022-wp.csv`)
+    var data = io.readDataSync(path)
+
+    races.forEach(race => {
+      race.time = time.key 
+      var m = data[`2022-11-08_${race.state}_G_${race.chamber}`]
+      if (m){
+        race.wapo = m.estimates
+      }
+    })
+  })
+
+  var outpath = outdir + '/2022-wp-latest.json'
+  io.writeDataSync(outpath, races)
+  exec(`rsync -a ${outpath} demo@roadtolarissa.com:../../usr/share/nginx/html/data/2022-wp-latest.json`)
 }
 
 // setInterval(merge, 60*1000)
