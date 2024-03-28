@@ -26,8 +26,8 @@ glob
       teams.reverse()
       timestamps.forEach(d => d[1] = 1 - d[1])
     }
-    var [loser, winner] = teams 
+    var [winner, loser] = teams 
 
-    io.writeDataSync(`${__dirname}/raw/json/${slug}.json`, {slug, loser, winner, date, timestamps})
+    io.writeDataSync(`${__dirname}/raw/json/${slug}.json`, {slug, winner, loser, date, timestamps})
   })
 

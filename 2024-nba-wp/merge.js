@@ -1,8 +1,10 @@
 var { _, d3, jp, fs, glob, io, queue, request } = require('scrape-stl')
 
-glob
+var games = glob
   .sync(__dirname + '/raw/json/*.json')
   .map(io.readDataSync)
-  .forEach(game => {
-    console.log(d3.max(game.timestamps, d => d[1]))
-  })
+
+io.writeDataSync(__dirname + '/2024-nba-wp-games.json', games)
+io.writeDataSync(__dirname + '/../../archive-roadtolarissa/data/2024-nba-wp-games.json', games)
+
+// TODO: compress?

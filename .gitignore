@@ -5,7 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
-yarn.json
+yarn
+.json
 
 nyt-byline/raw/
 
@@ -55,3 +56,5 @@ node_modules
 box-office-mojo/raw
 
 2024-nba-wp/raw
+2024-nba-wp/games.json
+2024-nba-wp/2024-nba-wp-games.json
