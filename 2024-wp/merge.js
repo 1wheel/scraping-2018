@@ -49,7 +49,13 @@ function merge(){
     var wapoData = io.readDataSync(wapoMetadata.path)
 
     var races = nytData.races.filter(race => isTopNytRace[race.nyt_id]).map(d => {
+
       var nyt = d.reporting_units[0].nyt_model_estimates.margin_quantile
+      // flip margin is D is winning
+      var nytD = d.reporting_units[0].candidates.filter(d => d.nyt_id == 'harris-k')[0]
+      var nytR = d.reporting_units[0].candidates.filter(d => d.nyt_id == 'trump-d')[0]
+      if (nytD.nyt_model_estimates.win_probability > .5) nyt = nyt.map(d => d*-1).reverse()
+
       var {nyt_id} = d
       var state_id = nyt_id.split('-')[0] // TODO: handle NE-2?
 

@@ -26,4 +26,4 @@ function download(){
 }
 
 download()
-setInterval(download, 1*60*1000)
+setInterval(download, 5*60*1000)
