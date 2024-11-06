@@ -4,89 +4,75 @@ var {exec} = require('child_process')
 var rawdir = __dirname + `/raw-data`
 var outdir = __dirname + `/out-data`
 
+
+var topRaces = [
+  "CO",
+  "ME",
+  "NM",
+  "VA",
+  "MN",
+  "MI",
+  "WI",
+  "PA",
+  "NV",
+  "NC",
+  "GA",
+  "AZ",
+]
+
 var isTopRace = {}
-;[
-  "AZ-G-S-2022-11-08",
-  "CO-G-S-2022-11-08",
-  "GA-G-S-2022-11-08",
-  "IN-G-S-2022-11-08",
-  "IN-G-H-1-2022-11-08",
-  "NH-G-S-2022-11-08",
-  "NC-G-S-2022-11-08",
-  "NC-G-H-13-2022-11-08",
-  "OH-G-S-2022-11-08",
-  "OH-G-H-1-2022-11-08",
-  "OH-G-H-13-2022-11-08",
-  "PA-G-S-2022-11-08",
-  "PA-G-H-7-2022-11-08",
-  "PA-G-H-8-2022-11-08",
-  "VA-G-H-2-2022-11-08",
-  "VA-G-H-7-2022-11-08",
-  "WI-G-S-2022-11-08",
-  "NV-G-S-2022-11-08",
-  "NH-G-H-2-2022-11-08",
-  "NY-G-H-19-2022-11-08",
-  "PA-G-H-17-2022-11-08",
-  "TX-G-H-34-2022-11-08"
-].forEach(d => isTopRace[d] = true)
+topRaces.forEach(d => isTopRace[d] = true)
+
+var isTopNytRace = {}
+topRaces.forEach(d => isTopNytRace[`${d}-G-P-2024-11-05`] = true)
+
+var isTopWapoRace = {}
+topRaces.forEach(d => isTopNytRace[`${d}-us-president-2024-general`] = true)
 
 function merge(){
   console.log('starting merge...')
 
   var tidy = []
-
   var files = glob.sync(rawdir + '/*.json')
     .map(path => {
       var [slug, time] = path.split('/raw-data/')[1].split('.json')[0].split('__')
-
       return {slug, time, path}
     })
 
+
   var timedata = jp.nestBy(files, d => d.time).map(parseTime)
   function parseTime(time){
-    var nyt = _.findWhere(time, {slug: 'nyt'})
-    var nytData = io.readDataSync(nyt.path)
+    var nytMetadata = _.findWhere(time, {slug: 'nyt-p'})
+    var nytData = io.readDataSync(nytMetadata.path)
 
-    // var races = nytData.raceCollections.scoreboard_races.map(d => d.nyt_voteshare_estimate)
-    var races = nytData.races.filter(race => isTopRace[race.nyt_id]).map(d => d.nyt_voteshare_estimate)
-    races.forEach(d => {
-      var [state, __, chamber, seat] = d.nyt_id.split('-')
-      d.state = state
-      d.chamber = chamber
-      d.seat = seat
+    var wapoMetadata = _.findWhere(time, {slug: 'wapo-p'})
+    var wapoData = io.readDataSync(wapoMetadata.path)
+
+    var races = nytData.races.filter(race => isTopNytRace[race.nyt_id]).map(d => {
+      var nyt = d.reporting_units[0].nyt_model_estimates.margin_quantile
+      var {nyt_id} = d
+      var state_id = nyt_id.split('-')[0] // TODO: handle NE-2?
+
+      var wapo = wapoData[`${state_id.toLowerCase()}-us-president-2024-general`].model_estimates
+      return {state_id, nyt, wapo}
     })
 
-    time.forEach(({slug, path}) => {
-      if (slug == 'nyt') return
-      console.log(slug)
-
-      var data = io.readDataSync(path)
-
-      races.forEach(race => {
-        var key = slug == 'wapo-s' ? 
-          `2022-11-08_${race.state}_G_${race.chamber}` : 
-          `2022-11-08_${race.state}_G_${race.chamber}_${race.seat}`
-        var m = data[key]
-        if (m){
-          race.wapo = m.estimates
-        }
-      })
-    })
 
     return {races, scrapeTime: time.key}
   }
 
 
-  var outpath = outdir + '/2022-wp-latest.json'
+  console.log('uploading... ', _.last(timedata).scrapeTime)
+  var outpath = outdir + '/2024-wp-latest.json'
   io.writeDataSync(outpath, _.last(timedata))
-  exec(`rsync -a ${outpath} demo@roadtolarissa.com:../../usr/share/nginx/html/data/2022-wp-latest.json`)
+  exec(`rsync -a ${outpath} demo@roadtolarissa.com:../../usr/share/nginx/html/data/2024-wp-latest.json`)
 
-  var outpath = outdir + '/2022-wp.json'
+  var outpath = outdir + '/2024-wp.json'
   io.writeDataSync(outpath, timedata)
-  exec(`rsync -a ${outpath} demo@roadtolarissa.com:../../usr/share/nginx/html/data/2022-wp.json`)
+  exec(`rsync -a ${outpath} demo@roadtolarissa.com:../../usr/share/nginx/html/data/2024-wp.json`)
 }
 
 
-setInterval(merge, 60*1000)
+setInterval(merge, 1*60*1000)
 merge()
 

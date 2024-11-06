@@ -1,6 +1,8 @@
 
 # wapo 
 
+https://www.washingtonpost.com/elections/results/2024/11/05/president/
+
 model_estimates
 
 ```
@@ -20,3 +22,8 @@ model_estimates
 model_status
 
 no_data
+
+
+
+# NYT
+
