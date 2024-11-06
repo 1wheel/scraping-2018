@@ -6,9 +6,10 @@ var { _, d3, jp, fs, glob, io, queue, request } = require('scrape-stl')
 var rawdir = __dirname + `/raw-data`
 
 var urls = [
-  {slug: 'nyt', url: 'https://static01.nyt.com/elections-assets/2022/data/2022-11-08/results-needle-forecast.json'},
-  {slug: 'wapo-s', url: 'https://elex-page-data-prod.elections.aws.wapo.pub/results/2022-11-08_USA_G_S.json'},
-  {slug: 'wapo-h', url: 'https://elex-page-data-prod.elections.aws.wapo.pub/results/2022-11-08_USA_G_H.json'},
+  {slug: 'nyt-p', url: 'https://static01.nyt.com/elections-assets/pages/data/2024-11-05/results-president-forecast-needle.json'},
+  {slug: 'wapo-p', url: 'https://elex-page-data-prod.elections.aws.wapo.pub/results/2024-11-05-election-president-national-feed.json'},
+  {slug: 'wapo-s', url: 'https://elex-page-data-prod.elections.aws.wapo.pub/results/2024-11-05-election-house-national-feed.json'},
+  {slug: 'wapo-h', url: 'https://elex-page-data-prod.elections.aws.wapo.pub/results/2024-11-05-election-senate-national-feed.json'},
 ]
 
 
