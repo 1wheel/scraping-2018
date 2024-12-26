@@ -1,5 +1,5 @@
 var { _, d3, jp, fs, glob, io, queue, request } = require('scrape-stl')
-const cheerio = require('cheerio');
+var cheerio = require('cheerio')
 
 var tidy = []
 glob
@@ -17,53 +17,46 @@ glob
     })
   })
 
+tidy = _.sortBy(tidy, d => -d.part)
+tidy = _.sortBy(tidy, d => +d.year)
+tidy = _.sortBy(tidy, d => +d.day)
 io.writeDataSync(`${__dirname}/tidy.tsv`, tidy)
 
 
 function parseLeaderboard(html) {
-  const $ = cheerio.load(html);
-  const results = [];
+  var $ = cheerio.load(html)
+  var results = []
   
-  // First find all leaderboard entries
-  const bothStars = $('.leaderboard-entry').toArray().slice(0, 100);  // First 100 entries are for both stars
-  const firstStar = $('.leaderboard-entry').toArray().slice(100);     // Next 100 entries are for first star
+  // First find all leaderboard entries (breaks if day isn't done lol)
+  var bothStars = $('.leaderboard-entry').toArray().slice(0, 100)
+  var firstStar = $('.leaderboard-entry').toArray().slice(100)
 
-  // Process both parts
-  [bothStars, firstStar].forEach((entries, partIndex) => {
-    const part = partIndex + 1;
+  ;[firstStar, bothStars].forEach((entries, partIndex) => {
+    var part = partIndex ? 1 : 2
     
     entries.forEach(entry => {
-      const $entry = $(entry);
+      var $entry = $(entry)
+      var time = $entry.find('.leaderboard-time').text().trim()
+      // var rank = +$entry.find('.leaderboard-position').text().replace(/[()]/g, '').trim()
       
-      const rank = +$entry.find('.leaderboard-position').text().replace(/[()]/g, '').trim();
-      const time = $entry.find('.leaderboard-time').text().trim();
+      // Get name by taking everything between time and optional (AoC++)
+      var name = $entry
+        .text()
+        .split(time)[1]
+        .split('(AoC++)')[0]
+        .trim()
       
-      // Get name, handling anonymous users and different name formats
-      let name;
-      if ($entry.find('.leaderboard-anon').length) {
-        name = $entry.find('.leaderboard-anon').text().trim();
-      } else {
-        // Try to get name from link or span
-        name = $entry.find('a').last().text().trim() || 
-               $entry.contents().filter(function() {
-                 return this.type === 'text';
-               }).text().trim() ||
-               $entry.find('span').last().text().trim();
-      }
+      // Add seconds calculation
+      var [h, m, s] = time.split('  ')[1].split(':').map(d => +d)
+      var seconds = h*3600 + m*60 + s;``
       
-      // Clean up the name
-      name = name.replace(/\s+/g, ' ').trim();
-      
-      if (rank && time && name) {  // Only add if we have all fields
-        results.push({
-          part,
-          rank,
-          time,
-          name
-        });
-      }
-    });
-  });
+      if (time && name) results.push({part, seconds, name})
+    })
+  })
   
-  return results;
+  return results
 }
+
+
+// we can ignore date, leaderboard always finishes in one day
+// console.log(d3.nestBy(dayDate, d => d.time.split('  ')[0]).length)
