@@ -17,7 +17,7 @@ glob
     })
   })
 
-tidy = _.sortBy(tidy, d => -d.part)
+tidy = _.sortBy(tidy, d => +d.part)
 tidy = _.sortBy(tidy, d => +d.year)
 tidy = _.sortBy(tidy, d => +d.day)
 io.writeDataSync(`${__dirname}/tidy.tsv`, tidy)
@@ -32,7 +32,7 @@ function parseLeaderboard(html) {
   var firstStar = $('.leaderboard-entry').toArray().slice(100)
 
   ;[firstStar, bothStars].forEach((entries, partIndex) => {
-    var part = partIndex ? 1 : 2
+    var part = partIndex + 1
     
     entries.forEach(entry => {
       var $entry = $(entry)
