@@ -1,0 +1,14 @@
+dbn	school_name	year	subject	proficiency_pct	source
+03M199	PS 199 Jessie Isador Straus	2024	ELA	83	web_search
+03M199	PS 199 Jessie Isador Straus	2024	Math	85	web_search
+03M199	PS 199 Jessie Isador Straus	2025	ELA	89.19	web_search
+03M087	PS 87 William Sherman	2024	ELA	83	web_search
+03M087	PS 87 William Sherman	2024	Math	81	web_search
+03M087	PS 87 William Sherman	2024	ELA_grade5	92.11	web_search
+03M009	PS 9 Sarah Anderson	2024	ELA	80	web_search
+03M009	PS 9 Sarah Anderson	2024	Math	86	web_search
+03M452	PS 452	2024	ELA	72	web_search
+03M452	PS 452	2024	Math	72	web_search
+03M452	PS 452	2024	ELA_grade3	76.09	web_search
+03M452	PS 452	2024	ELA_grade4	65	web_search
+03M452	PS 452	2024	ELA_grade5	83.33	web_search
