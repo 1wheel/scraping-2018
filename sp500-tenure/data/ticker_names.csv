@@ -1,0 +1,362 @@
+ticker,name
+AABA,Altaba
+AAMRQ,AMR Corporation
+ABI,Applied Biosystems (Applera)
+ABKFQ,Ambac Financial Group
+ABX,Barrick Gold
+ACKH,Armstrong Holdings
+ACS,Affiliated Computer Services
+ACT,Actavis
+ACV,Alberto-Culver
+ADCT,ADC Telecommunications
+AFS.A,Associates First Capital
+AGC,American General Corporation
+AHM,H.F. Ahmanson
+AIT,Applied Industrial Technologies
+AL,Air Lease Corporation
+AM,Antero Midstream
+AMCC,Applied Micro Circuits
+AMH,American Homes 4 Rent
+ANDW,Andrew Corporation
+ANRZQ,Alpha Natural Resources
+ANV,Allied Nevada Gold
+APCC,American Power Conversion
+AR,Antero Resources
+ARC,Atlantic Richfield (ARCO)
+AS,Armco
+ASC,American Stores
+ASH,Ashland
+ASN,Archstone-Smith Trust
+ASND,Ascend Communications
+ASO,Academy Sports and Outdoors
+AT,Alltel
+ATGE,Adtalem Global Education
+AW,Allied Waste Industries
+AWE,AT&T Wireless Services
+AZA,ALZA Corporation
+AZA.A,ALZA Corporation
+BAY,Bay Networks
+BBI,Blockbuster
+BBT,BB&T Corporation
+BC,Brunswick Corporation
+BCO,The Brink's Company
+BDK,Black & Decker
+BEV,Beverly Enterprises
+BFI,Browning-Ferris Industries
+BGG,Briggs & Stratton
+BHMSQ,Bethlehem Steel
+BKB,BankBoston
+BLS,BellSouth
+BLY,Bally Entertainment
+BMET,Biomet
+BMGCA,Battle Mountain Gold
+BNI,Burlington Northern Santa Fe
+BNL,Beneficial Corporation
+BOAT,Boatmen's Bancshares
+BOL,Bausch & Lomb
+BRL,Barr Pharmaceuticals
+BSC,Bear Stearns
+BT,Bankers Trust
+BTUUQ,Peabody Energy
+BUD,Anheuser-Busch
+BVSN,BroadVision
+CAL,Continental Airlines
+CAR,Avis Budget Group
+CBB,Cincinnati Bell
+CBH,Commerce Bancorp
+CBS,CBS Corporation
+CBSS,Compass Bancshares
+CCB,Capital Cities/ABC
+CCEP,Coca-Cola European Partners
+CCTYQ,Circuit City Stores
+CCU,Clear Channel Communications
+CD,Cendant
+CEN,Ceridian
+CFC,Countrywide Financial
+CFL,Brink's Home Security Holdings
+CG,The Carlyle Group
+CGP,The Coastal Corporation
+CHA,Champion International
+CHIR,Chiron
+CHRS,Charming Shoppes
+CIN,Cinergy
+CIT.A,CIT Group
+CITGQ,CIT Group
+CMB,Chemical Banking Corporation
+CMVT,Comverse Technology
+CMX,Caremark Rx
+CNG,Consolidated Natural Gas
+CNW,Con-way
+CNXT,Conexant Systems
+COC.B,Conoco
+COMS,3Com
+CPNLQ,Calpine
+CPQ,Compaq Computer
+CR,Crane Co.
+CRR,CARBO Ceramics
+CS,Cabletron Systems
+CSE,Case Corporation
+CSR,Central and South West Corporation
+CTB,Cooper Tire & Rubber
+CTX,Centex
+CYM,Cyprus Amax Minerals
+CYR,Cray Research
+DALRQ,Delta Air Lines
+DCNAQ,Dana Corporation
+DDR,Developers Diversified Realty
+DDS,Dillard's
+DEC,Digital Equipment Corporation
+DGN,Data General
+DI,Dresser Industries
+DIGI,DSC Communications
+DLX,Deluxe Corporation
+DPHIQ,Delphi Corporation
+DWD,"Dean Witter, Discover & Co."
+EC,Engelhard Corporation
+ECH,Echlin
+ECO,Echo Bay Mines
+EDS,Electronic Data Systems
+EFU,Eastern Enterprises
+EHC,Encompass Health
+EKDKQ,Eastman Kodak
+ENRNQ,Enron
+ENS,EnerSys
+EOP,Equity Office Properties Trust
+EPAM,EPAM Systems
+EQ,The Equitable Companies (later AXA Financial)
+ETS,Enterasys Networks
+FBF,FleetBoston Financial
+FBO,Fibreboard Corporation
+FCN,FTI Consulting
+FG,USF&G Corporation (United States Fidelity & Guaranty)
+FJ,Fort James Corporation
+FLMIQ,Fleming Companies
+FLTWQ,Fleetwood Enterprises
+FMCC,Freddie Mac (Federal Home Loan Mortgage Corp)
+FNMA,Fannie Mae (Federal National Mortgage Association)
+FPC,Florida Progress Corporation
+FRO,Frontline Ltd
+FSH,Fisher Scientific International
+FSL,Freescale Semiconductor
+FTL.A,Fruit of the Loom
+FWLT,Foster Wheeler
+G,Gillette
+GAPTQ,Great Atlantic & Pacific Tea Company (A&P)
+GDT,Guidant
+GDW,Golden West Financial
+GFS.A,Giant Food
+GIDL,Giddings & Lewis
+GNT,Green Tree Financial
+GP,Georgia-Pacific
+GPU,GPU Inc (General Public Utilities)
+GRN,General Re Corporation
+GSX,General Signal Corporation
+GTE,GTE Corporation
+GTW,Gateway Inc
+GWF,Great Western Financial Corporation
+H,Hyatt Hotels
+HBOC,HBO & Company
+HCP,"HCP, Inc."
+HCR,Manor Care
+HDLM,Handleman Company
+HET,Harrah's Entertainment
+HFS,HFS Incorporated
+HI,Household International
+HM,Homestake Mining
+HMA,Health Management Associates
+HPC,Hercules Incorporated
+HPH,Harnischfeger Industries
+HSH,Hillshire Brands
+I,First Interstate Bancorp
+IAC,IAC/InterActiveCorp
+IKN,IKON Office Solutions
+IMNX,Immunex
+INCLF,Inco Limited
+INGR,Ingredion
+JAVA,Sun Microsystems
+JH,John H. Harland Company
+JHF,John Hancock Financial Services
+JOS,Jostens
+JP,Jefferson-Pilot
+KATE,Kate Spade & Company
+KM,Kmart
+KMG,Kerr-McGee
+KRB,MBNA Corporation
+KRI,Knight Ridder
+KWP,King World Productions
+LDG,Longs Drug Stores
+LDW.B,Laidlaw Inc.
+LEHMQ,Lehman Brothers Holdings
+LIZ,Liz Claiborne
+LLX,Louisiana Land and Exploration
+LOR,Loral Corporation
+LPX,Louisiana-Pacific
+LU,Lucent Technologies
+LUB,Luby's
+MAY,May Department Stores
+MCIC,MCI Communications
+MD,Pediatrix Medical Group (MEDNAX)
+MDP,Meredith Corporation
+MDR,McDermott International
+MEA,Mead Corporation
+MEDI,MedImmune
+MEL,Mellon Financial
+MER,Merrill Lynch
+MERQ,Mercury Interactive
+MII,Morton International
+MIR,Mirant
+MKG,Mallinckrodt
+MNR,Manor Care
+MOB,Mobil Corporation
+MOH,Molina Healthcare
+MST,Mercantile Stores
+MTG,MGIC Investment
+MTL,Mercantile Bancorporation
+MTLQQ,Motors Liquidation Company (old General Motors)
+MTW,Manitowoc Company
+MWI,MWI Veterinary Supply
+MWV,MeadWestvaco
+MYG,Maytag
+MZIAQ,Milacron
+N,Inco Limited
+NAV,Navistar International
+NC,NACCO Industries
+NCC,National City Corporation
+NCE,New Century Energies
+NFB,North Fork Bancorporation
+NGH,Nabisco Group Holdings (formerly RJR Nabisco Holdings)
+NLC,Nalco Holding
+NMK,Niagara Mohawk Power
+NRTLQ,Nortel Networks
+NSI,National Service Industries
+NT,Nortel Networks
+NXTL,Nextel Communications
+NYN,NYNEX
+OAT,Quaker Oats
+OK,Old Kent Financial Corporation
+OM,Outboard Marine Corporation
+OMX,OfficeMax Incorporated
+ONE,Bank One Corporation
+ORX,Oryx Energy Company
+OWENQ,Owens Corning
+PAC,Pacific Enterprises
+PALM,"Palm, Inc."
+PAS,"PepsiAmericas, Inc."
+PBG,"The Pepsi Bottling Group, Inc."
+PCH,Potlatch Corporation
+PD,Phelps Dodge Corporation
+PDG,Placer Dome Inc.
+PEL,Panhandle Eastern Corporation
+PGL,Peoples Energy Corporation
+PHA,Pharmacia Corporation
+PHB,"Pioneer Hi-Bred International, Inc."
+PMCS,"PMC-Sierra, Inc."
+PMI,"The PMI Group, Inc."
+PNU,"Pharmacia & Upjohn, Inc."
+PPW,PacifiCorp
+PRD,Polaroid Corporation
+PSFT,"PeopleSoft, Inc."
+PVN,Providian Financial Corporation
+PVT,Providian Corporation
+PWER,"Power-One, Inc."
+PWJ,Paine Webber Group Inc.
+PX,"Praxair, Inc."
+PZE,Petrobras Energia (Petrobras Argentina S.A.)
+QLGC,QLogic Corporation
+RAL,Ralston Purina Company
+RATL,Rational Software Corporation
+RBD,Rubbermaid Incorporated
+RBK,Reebok International Ltd.
+RDS.A,Royal Dutch Shell plc (Class A ADR)
+RLM,Reynolds Metals Company
+RML,Russell Corporation
+RNB,Republic New York Corporation
+ROH,Rohm and Haas Company
+RSHCQ,RadioShack Corporation
+RYAN,Ryan Specialty Holdings
+RYC,Raychem Corporation
+RYI,Ryerson Holding Corporation
+SAF,Safeco Corporation
+SAFC,Safeco Corporation
+SANM,Sanmina Corporation
+SAPE,Sapient Corporation
+SB,Salomon Inc
+SBNY,Signature Bank
+SCI,Service Corporation International
+SDS,SunGard Data Systems
+SEBL,Siebel Systems
+SEDG,SolarEdge Technologies
+SEG,Seagate Technology
+SFA,Scientific-Atlanta
+SFS,Smart & Final Stores
+SGID,Silicon Graphics
+SHN,Shoney's
+SK,Safety-Kleen Corporation
+SMI,Springs Industries
+SMS,Shared Medical Systems
+SNT,Sonat Inc.
+SNV,Synovus Financial
+SOTR,SouthTrust Corporation
+SOV,Sovereign Bancorp
+SPC,The St. Paul Companies
+SRR,Stride Rite Corporation
+SSP,The E.W. Scripps Company
+STO,Stone Container Corporation
+SUB,Summit Bancorp
+SUNEQ,SunEdison
+SUNW,Sun Microsystems
+SXCL,Steel Excel
+SYMC,Symantec Corporation
+TA,Transamerica Corporation
+TCOMA,Tele-Communications Inc.
+TDM,Tandem Computers
+TEK,Tektronix
+TEN,Tenneco
+TEX,Terex Corporation
+TIN,Temple-Inland
+TKR,Timken Company
+TMC,Times Mirror Company
+TMC.A,Times Mirror Company (Class A)
+TNB,Thomas & Betts
+TOS,Tosco Corporation
+TOY,Toys R Us
+TRW,TRW Inc.
+TUP,Tupperware Brands
+TX,Texaco
+TXU,TXU Corp (Texas Utilities)
+U,US Airways Group
+UAWGQ,US Airways Group
+UCC,Union Camp Corporation
+UCL,Unocal Corporation
+UCM,Unicom Corporation
+UIS,Unisys Corporation
+UK,Union Carbide
+UMG,United Meridian Corporation
+UN,Unilever N.V.
+UPC,Union Planters Corporation
+UPR,Union Pacific Resources Group
+USBC,U.S. Bancorp (Oregon)
+USH,USLIFE Corporation
+USS,United States Surgical Corporation
+UST,UST Inc.
+USW,US West
+UVN,Univision Communications
+VIAV,Viavi Solutions
+VO,Seagram Company Ltd.
+VRTS,Veritas Software
+VSTNQ,Visteon Corporation
+VTSS,Vitesse Semiconductor
+WAI,Western Atlas
+WAMUQ,Washington Mutual
+WCOEQ,WorldCom
+WEN,Wendy's
+WFT,Weatherford International
+WLA,Warner-Lambert
+WLL,Whiting Petroleum
+WLP,WellPoint
+WNDXQ,Winn-Dixie Stores
+WOR,Worthington Industries
+WWY,Wm. Wrigley Jr. Company
+WYE,Wyeth
+WYND,Wyndham Destinations
+YRCW,YRC Worldwide
